@@ -1,5 +1,6 @@
 <% if logged_in? %>
-   <%= render "posts/posts", posts: @posts %>
+  <h1 class="text-center mb-3">新着投稿</h1>
+  <%= render "posts/posts", posts: @posts %>
 <% else %>
   <div class="center jumbotron">
     <div class="text-center">
