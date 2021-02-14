@@ -4,10 +4,13 @@
   <div class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><%= @user.name %></h3>
+        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
       </div>
       <div class="card-body">
-        <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 500 }) %>" alt="">
+        <h3><%= @user.name %></h3>
+        <% if current_user.id == params[:id] %>
+          <h4><%= @user.email %></h4>
+        <% end %>
       </div>
     </div>
   </div>

@@ -7,4 +7,11 @@ Rails.application.routes.draw do
   
   get "signup", to: "users#new"
   resources :users, only: [:show, :new, :create]
+  
+  resources :posts do
+    collection do
+      get :ranking
+    end
+  end
+  resources :favorites, only: [:create, :destroy]
 end
